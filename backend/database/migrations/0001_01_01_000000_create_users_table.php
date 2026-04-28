@@ -15,9 +15,10 @@ return new class extends Migration
             $table->id();
             $table->string('full_name');
             $table->string('username')->unique();
-            $table->string('email')->unique();
+            $table->string('email')->unique()->nullable(); // nullable karena tidak dipakai di register
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
+            $table->string('role')->default('user'); // tambahkan ini
             $table->rememberToken();
             $table->timestamps();
         });

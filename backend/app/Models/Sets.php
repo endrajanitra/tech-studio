@@ -4,6 +4,8 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use App\Models\Lessons;
+use App\Models\Courses;
 
 class Sets extends Model
 {
@@ -13,4 +15,14 @@ class Sets extends Model
         'course_id',
         'order',
     ];
+
+    public function course()
+    {
+        return $this->belongsTo(Courses::class);
+    }
+
+    public function lessons()
+    {
+        return $this->hasMany(Lessons::class)->orderBy('order');
+    }
 }
