@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('lesson_contents', function (Blueprint $table) {
             $table->id();
             $table->foreignId('lesson_id')->constrained('lessons')->cascadeOnDelete();
-            $table->enum('type', ['learn, quiz']);
+            $table->enum('type', ['learn', 'quiz']);
             $table->text('content');
             $table->tinyInteger('order'); 
             $table->timestamps();

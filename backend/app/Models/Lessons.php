@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use App\Models\Sets;
-use App\Models\lessonContents;
+use App\Models\LessonContents; 
 
 class Lessons extends Model
 {

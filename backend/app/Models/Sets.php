@@ -23,6 +23,6 @@ class Sets extends Model
 
     public function lessons()
     {
-        return $this->hasMany(Lessons::class)->orderBy('order');
+        return $this->hasMany(Lessons::class, 'set_id')->orderBy('order');
     }
 }

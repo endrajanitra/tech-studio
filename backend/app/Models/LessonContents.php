@@ -4,13 +4,15 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use Laravel\Prompts\Concerns\HasInfo;
 use App\Models\Lessons;
 use App\Models\Options;
 
-class lessonContents extends Model
+class LessonContents extends Model  
 {
     use HasFactory;
+
+    protected $table = 'lesson_contents'; 
+
     protected $fillable = [
         'lesson_id',
         'type',
@@ -20,11 +22,11 @@ class lessonContents extends Model
 
     public function lesson()
     {
-        return $this->belongsTo(Lessons::class);
+        return $this->belongsTo(Lessons::class, 'lesson_id');
     }
 
     public function options()
     {
-        return $this->hasMany(Options::class);
+        return $this->hasMany(Options::class, 'lesson_content_id');
     }
 }
