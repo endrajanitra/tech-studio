@@ -15,8 +15,8 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->string('slug');
-            $table->text('description');
-            $table->tinyInteger('is_published');
+            $table->text('description')->nullable();
+            $table->tinyInteger('is_published')->default(0);
             $table->timestamps();
         });
     }

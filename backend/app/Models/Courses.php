@@ -20,7 +20,7 @@ class Courses extends Model
 
     public function sets()
     {
-        return $this->hasMany(Sets::class)->orderBy('order');
+        return $this->hasMany(Sets::class, 'course_id')->orderBy('order');
     }
 
     public function users()
