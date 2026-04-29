@@ -23,7 +23,7 @@ class Lessons extends Model
 
     public function contents()
     {
-        return $this->hasMany(LessonContents::class)->orderBy('order');
+        return $this->hasMany(LessonContents::class, 'lesson_id')->orderBy('order');
     }
 
     public function completedByUsers()
